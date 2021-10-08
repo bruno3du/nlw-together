@@ -29,12 +29,11 @@ export default function Home() {
 			return;
 		}
 
-		const dbRef = await ref(database, 'rooms');
+		const dbRef = await ref(database, `/rooms/${roomCode}`);
 		const getRoom = await get(dbRef);
-		const isRoom = await getRoom.exists();
 
-		if (!isRoom) {
-			console.log('getRoom', getRoom, 'isRoom', isRoom);
+		if (!getRoom.exists()) {
+			alert('Room does not exists')
 			return;
 		}
 
