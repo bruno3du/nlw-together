@@ -4,51 +4,42 @@ import logoImg from '../assets/images/logo.svg';
 import Button from '../components/Button';
 import RoomCode from '../components/RoomCode';
 import '../styles/room.scss';
-import { useParams } from 'react-router-dom';
-import { FormEvent, useState } from 'react';
-import { useAuth } from '../hooks/useAuth';
-import { database } from '../services/firebase';
-import { push, ref } from '@firebase/database';
+import { useParams, useHistory } from 'react-router-dom';
+// import { useAuth } from '../hooks/useAuth';
 import Question from '../components/Question';
 import { useRoom } from '../hooks/useRoom';
+import deleteImg from '../assets/images/delete.svg';
+import { database } from '../services/firebase';
+import { ref, remove, update } from '@firebase/database';
 
 type RoomParams = {
 	id: string;
 };
 
 export default function AdminRoom() {
-	const { user } = useAuth();
+	// const { user } = useAuth();
 	const params = useParams<RoomParams>();
 	const roomId = params.id;
-	const [newQuestion, setNewQuestion] = useState('');
+	const history = useHistory()
+
 	const { questions, title } = useRoom(roomId);
 
-	async function handleSendQuestion(e: FormEvent) {
-		e.preventDefault();
-
-		if (newQuestion.trim() === '') {
-			return;
+	async function handleDeleteQuestion(questionId: string) {
+		if (window.confirm('Tem certeza que quer excluir esta pergunta?')) {
+			const questionRef = await ref(
+				database,
+				`/rooms/${roomId}/questions/${questionId}/`
+			);
+			remove(questionRef);
 		}
+	}
 
-		if (!user) {
-			throw new Error('You must be logged in');
-		}
-
-		const question = {
-			content: newQuestion,
-			author: {
-				name: user.name,
-				avatar: user.avatar,
-			},
-
-			isHighlighted: false,
-			isAnswered: false,
-		};
-
-		const refDb = await ref(database, `/rooms/${roomId}/questions`);
-		await push(refDb, question);
-
-		setNewQuestion('');
+	async function handleEndRoom() {
+		const updateRoom = await ref(database, `/rooms/${roomId}`);
+		update(updateRoom, {
+			endedAt: new Date(),
+		});
+		history.push('/')
 	}
 
 	return (
@@ -58,7 +49,9 @@ export default function AdminRoom() {
 					<img src={logoImg} alt='Letmeask' />
 					<div>
 						<RoomCode code={roomId} />
-						<Button isOutlined>Encerrar Sala</Button>
+						<Button isOutlined onClick={handleEndRoom}>
+							Encerrar Sala
+						</Button>
 					</div>
 				</div>
 			</header>
@@ -75,8 +68,13 @@ export default function AdminRoom() {
 							<Question
 								key={question.id}
 								content={question.content}
-								author={question.author}
-							/>
+								author={question.author}>
+								<button
+									type='button'
+									onClick={() => handleDeleteQuestion(question.id)}>
+									<img src={deleteImg} alt='Remover pergunta' />
+								</button>
+							</Question>
 						);
 					})}
 				</div>
