@@ -33,12 +33,12 @@ export default function Home() {
 		const getRoom = await get(dbRef);
 
 		if (!getRoom.exists()) {
-			alert('Room does not exists')
+			alert('Room does not exists');
 			return;
 		}
 
-		if(getRoom.val().endedAt) {
-			alert('Room already closed')
+		if (getRoom.val().endedAt) {
+			alert('Room already closed');
 			return;
 		}
 

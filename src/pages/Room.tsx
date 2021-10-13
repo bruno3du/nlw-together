@@ -51,7 +51,15 @@ export default function Room() {
 		setNewQuestion('');
 	}
 
-	async function handleLikeQuestion(questionId: string, likeId: string | undefined) {
+	async function handleLikeQuestion(
+		questionId: string,
+		likeId: string | undefined,
+		isAnswered: boolean
+	) {
+		if(isAnswered) {
+			return;
+		}
+
 		if (likeId) {
 			const removeLike = await ref(
 				database,
@@ -114,13 +122,15 @@ export default function Room() {
 							<Question
 								key={question.id}
 								content={question.content}
-								author={question.author}>
+								author={question.author}
+								isAnswered={question.isAnswered}
+								isHighlighted={question.isHighlighted}>
 								<button
 									className={`like-button ${question.likeId ? 'like' : ''}`}
 									type='button'
 									aria-label='Marcar como gostei'
 									onClick={() =>
-										handleLikeQuestion(question.id, question.likeId)
+										handleLikeQuestion(question.id, question.likeId, question.isAnswered)
 									}>
 									{question.likeCount > 0 && <span>{question.likeCount}</span>}
 									<svg
