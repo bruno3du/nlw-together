@@ -18,6 +18,8 @@ Como forma de diferenciar, decidi refazer a forma de consumir os dados da API do
 - Direcionar criador da sala direto para sala de Admin.
 - Resposividade
 - Proteção de rotas
+- Tooltip
+- Admin Visualizar Curtidas
 
 Tabela de conteúdos
 =================
