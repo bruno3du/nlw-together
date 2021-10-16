@@ -16,6 +16,8 @@ Como forma de diferenciar, decidi refazer a forma de consumir os dados da API do
 
 - Ordernar perguntas por quantidade de perguntas
 - Direcionar criador da sala direto para sala de Admin.
+- Resposividade
+- Proteção de rotas
 
 Tabela de conteúdos
 =================
