@@ -6,6 +6,11 @@ Como admin da sala, você tem opção de destarcar uma mensagem que esteja respo
 O telespectadores(se me permite falar assim), podem fazer perguntas e curtir um perguntas de outros, que por sua vez pode chamar mais atenção
 de quem esta selecionando as perguntas para serem respondidas.
 
+<div align="center">
+	<img width="700px" src="letmeask.png" />
+</div>
+
+
 
 ## Diferenciais
 
