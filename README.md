@@ -1,46 +1,109 @@
-# Getting Started with Create React App
+# Let me Ask
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+É uma aplicação que permite que um usuário crie uma sala para receber perguntas ao vivo.
+Como admin da sala, você tem opção de destarcar uma mensagem que esteja respondendo. E pode também marcar como lido.
 
-## Available Scripts
+O telespectadores(se me permite falar assim), podem fazer perguntas e curtir um perguntas de outros, que por sua vez pode chamar mais atenção
+de quem esta selecionando as perguntas para serem respondidas.
 
-In the project directory, you can run:
 
-### `yarn start`
+## Diferenciais
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Como forma de diferenciar, decidi refazer a forma de consumir os dados da API do Firebase com base na sua nova versão 9.0. Isso me trouxe a uma agradável necessidade de fazer pesquisa na documentação me aprofundando mais no seu funcionamento. E ter conseguido realizar o projeto com base na compreensão do que devia ser feito e na compreensão da documentação, me fez sentir que cheguei a um passo a frente.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+### TODO
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Ordernar perguntas por quantidade de perguntas
+- Direcionar criador da sala direto para sala de Admin.
+- Resposividade
+- Proteção de rotas
+- Tooltip
+- Admin Visualizar Curtidas
 
-### `yarn build`
+Tabela de conteúdos
+=================
+<p align="center">
+ <a href="#começando">Começando</a> •
+ <a href="#prerequisitos">Pré-requisitos</a> • 
+ <a href="#instalação">Instalação</a> • 
+ <a href="#contribuicao">Contribuição</a> • 
+ <a href="#licenc-a">Licença</a> • 
+ <a href="#autor">Autor</a>
+</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h4 align="center"> 
+	🚧  React Select 🚀 Em construção...  🚧
+</h4>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Começando
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
 
-### `yarn eject`
+Consulte **Instalação** para saber como implantar o projeto.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 📋 Pré-requisitos
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 🔧 Instalação
 
-## Learn More
+```bash
+# Clone este repositório
+$ git clone <https://github.com/bruno3du/nlw-together.git>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Acesse a pasta do projeto no terminal/cmd
+$ cd nlw-together
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Instale as dependências
+$ yarn install
+
+# Execute a aplicação em modo de desenvolvimento
+$ yarn start
+
+# Você precisará colocar suas credenciais do Firebase conforme arquivo firebase.js
+informa.
+
+# O servidor inciará na porta:3000 - acesse <http://localhost:3000>
+```
+
+## 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+<div align="left">
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" >
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" >
+<img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" />
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+<img src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black" />
+ 
+</div>
+
+## 📌 Versão
+
+Foi usado o [Github](https://github.com/) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://github.com/suas/tags/do/projeto). 
+
+## 🎁 Expressões de gratidão
+
+* Agradeço Rocketseat por mostrar soluções contemporaneas para projetos reais. 📢
+* Agradeço também a amigos que me auxiliou com soluções neste projeto.
+* Agradeço imensamente o apoio de cada um nesta trajetória 🤓.
+
+
+---
+### Autor
+
+
+<a href="https://github.com/bruno3du">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/83365446?v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Bruno Eduardo</b></sub></a> <a href="https://github.com/bruno3du" title="My Photo Profile">🚀</a>
+
+
+Feito com ❤️ por Bruno Eduardo 👋🏽 Entre em contato!
+
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=linkedin&logoColor=white&link=https://www.linkedin.com/in/bruno-eduardo-alves/)](https://www.linkedin.com/in/bruno-eduardo-alves/)
+[![Hotmail Badge](https://img.shields.io/badge/-bruno.3duardo@hotmail.com-0078D4?style=flat-square&logo=microsoft-outlook&logoColor=white&link=mailto:bruno.3duardo@hotmail.com)](mailto:bruno.3duardo@hotmail.com)
